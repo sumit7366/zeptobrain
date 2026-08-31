@@ -571,7 +571,6 @@ export default function App() {
   const [summary, setSummary] = useState(null);
   const [roi, setRoi] = useState(null);
   const [stores, setStores] = useState([]);
-  const [skus, setSkus] = useState([]);
   const [connected, setConnected] = useState(null);
 
   useEffect(() => {
@@ -595,11 +594,6 @@ export default function App() {
       .then(r => r.json())
       .then(d => { console.log("Stores data:", d); setStores(d.stores || []); })
       .catch(e => console.error("Stores fetch failed:", e));
-      
-    fetch(`${API}/skus`)
-      .then(r => r.json())
-      .then(d => { console.log("SKUs data:", d); setSkus(d.skus || []); })
-      .catch(e => console.error("SKUs fetch failed:", e));
   }, []);
 
   const navTabs = [
