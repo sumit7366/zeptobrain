@@ -609,38 +609,41 @@ export default function App() {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
       <header className="bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between mb-4">
-            <div>
+        <div className="max-w-7xl mx-auto px-6 py-3">
+          <div className="flex items-center justify-between gap-4">
+            {/* Title */}
+            <div className="flex-shrink-0">
               <h1 className="text-3xl font-bold">🧠 ZeptoBrain</h1>
-              <p className="text-blue-100">Dark Store Inventory Intelligence System</p>
+              <p className="text-blue-100 text-sm">Dark Store Inventory Intelligence System</p>
             </div>
-            <span className={`flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium ${
+
+            {/* Navigation */}
+            <nav className="flex-1 flex gap-2 justify-center overflow-x-auto">
+              {navTabs.map(nav => (
+                <button
+                  key={nav.id}
+                  onClick={() => setTab(nav.id)}
+                  className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-all ${
+                    tab === nav.id
+                      ? "bg-white text-blue-600 shadow-md"
+                      : "bg-blue-500/30 text-white hover:bg-blue-500/50"
+                  }`}
+                >
+                  {nav.icon} {nav.label}
+                </button>
+              ))}
+            </nav>
+
+            {/* API Status */}
+            <span className={`flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium ${
               connected === true ? "bg-green-500/20 text-green-200" :
               connected === false ? "bg-red-500/20 text-red-200" : "bg-gray-500/20 text-gray-200"}`}>
               <span className={`w-2 h-2 rounded-full ${
                 connected === true ? "bg-green-400 animate-pulse" :
                 connected === false ? "bg-red-400" : "bg-gray-400"}`} />
-              {connected === true ? "API Live" : connected === false ? "API Offline" : "Connecting..."}
+              {connected === true ? "🟢 API Live" : connected === false ? "🔴 API Offline" : "⏳ Connecting..."}
             </span>
           </div>
-
-          {/* Navigation */}
-          <nav className="flex gap-2 overflow-x-auto pb-2">
-            {navTabs.map(nav => (
-              <button
-                key={nav.id}
-                onClick={() => setTab(nav.id)}
-                className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition-all ${
-                  tab === nav.id
-                    ? "bg-white text-blue-600 shadow-md"
-                    : "bg-blue-500/30 text-white hover:bg-blue-500/50"
-                }`}
-              >
-                {nav.icon} {nav.label}
-              </button>
-            ))}
-          </nav>
         </div>
       </header>
 
