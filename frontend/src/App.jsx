@@ -240,7 +240,7 @@ function Forecast({ skus, stores }) {
     if (storeSkus.length > 0 && !selectedSku) {
       setSelectedSku(storeSkus[0]?.sku_id || "");
     }
-  }, [storeSkus]);
+  }, [storeSkus, selectedSku]);
 
   const loadForecast = () => {
     if (!selectedStore || !selectedSku) return;
