@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {
   LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  Tooltip, Legend, ResponsiveContainer, PieChart, Pie
+  Tooltip, Legend, ResponsiveContainer
 } from "recharts";
 
 const API = process.env.REACT_APP_API_URL || "https://zeptobrain-production.up.railway.app/api";
