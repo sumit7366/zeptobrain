@@ -1,0 +1,37 @@
+[
+  {
+    "store_id": "MUM001",
+    "name": "Andheri West",
+    "lat": 19.1364,
+    "lng": 72.8296,
+    "locality": "andheri"
+  },
+  {
+    "store_id": "MUM002",
+    "name": "Bandra East",
+    "lat": 19.0596,
+    "lng": 72.8552,
+    "locality": "bandra"
+  },
+  {
+    "store_id": "MUM003",
+    "name": "Powai",
+    "lat": 19.1176,
+    "lng": 72.906,
+    "locality": "powai"
+  },
+  {
+    "store_id": "MUM004",
+    "name": "Malad West",
+    "lat": 19.1874,
+    "lng": 72.8481,
+    "locality": "malad"
+  },
+  {
+    "store_id": "MUM005",
+    "name": "Goregaon East",
+    "lat": 19.1663,
+    "lng": 72.8526,
+    "locality": "goregaon"
+  }
+]
