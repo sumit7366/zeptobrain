@@ -497,15 +497,32 @@ export default function App() {
   const [connected, setConnected] = useState(null);
 
   useEffect(() => {
+    console.log('🔌 API URL:', API);
+    
     // Check API connection
     fetch(`${API.replace('/api','')}`)
       .then(r => { if(r.ok) setConnected(true); else setConnected(false); })
-      .catch(() => setConnected(false));
+      .catch(e => { console.error('Connection check failed:', e); setConnected(false); });
 
-    fetch(`${API}/summary`).then(r => r.json()).then(setSummary).catch(() => {});
-    fetch(`${API}/roi`).then(r => r.json()).then(setRoi).catch(() => {});
-    fetch(`${API}/stores`).then(r => r.json()).then(setStores).catch(() => {});
-    fetch(`${API}/skus`).then(r => r.json()).then(setSkus).catch(() => {});
+    fetch(`${API}/summary`)
+      .then(r => r.json())
+      .then(d => { console.log('Summary data:', d); setSummary(d); })
+      .catch(e => console.error('Summary fetch failed:', e));
+      
+    fetch(`${API}/roi`)
+      .then(r => r.json())
+      .then(d => { console.log('ROI data:', d); setRoi(d); })
+      .catch(e => console.error('ROI fetch failed:', e));
+      
+    fetch(`${API}/stores`)
+      .then(r => r.json())
+      .then(d => { console.log('Stores data:', d); setStores(d.stores || []); })
+      .catch(e => console.error('Stores fetch failed:', e));
+      
+    fetch(`${API}/skus`)
+      .then(r => r.json())
+      .then(d => { console.log('SKUs data:', d); setSkus(d.skus || []); })
+      .catch(e => console.error('SKUs fetch failed:', e));
   }, []);
 
   const tabs = [
