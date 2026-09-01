@@ -234,11 +234,10 @@ function AIChatbot() {
             {messages.map((msg, i) => (
               <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div
-                  className={`max-w-[90%] p-3.5 rounded-xl leading-relaxed flex items-start gap-2.5 ${
-                    msg.role === "user"
-                      ? "bg-zepto-purple text-white font-medium"
-                      : "bg-zepto-card border border-zepto-border text-slate-200"
-                  }`}
+                  className={`max-w-[90%] p-3.5 rounded-xl leading-relaxed flex items-start gap-2.5 ${msg.role === "user"
+                    ? "bg-zepto-purple text-white font-medium"
+                    : "bg-zepto-card border border-zepto-border text-slate-200"
+                    }`}
                 >
                   {msg.role === "bot" && (
                     <img src="/ai-bot.png" alt="Bot" className="w-5 h-5 object-contain flex-shrink-0 mt-0.5" />
@@ -307,7 +306,7 @@ function TabAbout({ summary, roi }) {
       {/* Hero Section */}
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-zepto-card via-[#1A1A2E] to-[#251B45] border border-zepto-border p-8 md:p-10 shadow-2xl">
         <div className="absolute top-0 right-0 w-96 h-96 bg-zepto-purple/15 rounded-full blur-3xl pointer-events-none" />
-        
+
         <div className="relative z-10">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zepto-purple/20 border border-zepto-purple/40 text-zepto-lightPurple text-xs font-semibold tracking-wide uppercase">
@@ -458,11 +457,10 @@ function TabAbout({ summary, roi }) {
             <button
               key={p.id}
               onClick={() => setActiveProblem(p.id)}
-              className={`p-3 rounded-xl border text-left transition-all ${
-                activeProblem === p.id
-                  ? "bg-zepto-purple text-white border-zepto-lightPurple shadow-lg glow-purple"
-                  : "bg-[#0F0F1A] text-slate-300 border-zepto-border hover:border-zepto-purple/50"
-              }`}
+              className={`p-3 rounded-xl border text-left transition-all ${activeProblem === p.id
+                ? "bg-zepto-purple text-white border-zepto-lightPurple shadow-lg glow-purple"
+                : "bg-[#0F0F1A] text-slate-300 border-zepto-border hover:border-zepto-purple/50"
+                }`}
             >
               <div className="text-[11px] font-mono text-purple-300 font-bold">P{p.id}</div>
               <div className="text-xs font-semibold truncate mt-0.5">{p.title}</div>
@@ -739,12 +737,12 @@ function TabForecast({ stores }) {
           setSelectedSku(list[0].sku_id);
         }
       })
-      .catch(() => {});
+      .catch(() => { });
 
     fetch(`${API_BASE}/categories`)
       .then(r => r.json())
       .then(d => setCategories(Array.isArray(d) ? d : []))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -958,11 +956,10 @@ function TabForecast({ stores }) {
             {forecastData.forecast.map((f, i) => (
               <div
                 key={i}
-                className={`p-4 rounded-xl border text-center font-mono-data ${
-                  f.is_weekend
-                    ? "bg-zepto-purple/20 border-zepto-purple/50 glow-purple"
-                    : "bg-[#0F0F1A] border-zepto-border"
-                }`}
+                className={`p-4 rounded-xl border text-center font-mono-data ${f.is_weekend
+                  ? "bg-zepto-purple/20 border-zepto-purple/50 glow-purple"
+                  : "bg-[#0F0F1A] border-zepto-border"
+                  }`}
               >
                 <div className="text-xs font-sans text-slate-400">{f.day}</div>
                 <div className="text-[11px] text-zepto-muted mt-0.5">{f.date?.slice(5)}</div>
@@ -1036,11 +1033,10 @@ function TabSpoilage({ stores }) {
               <button
                 key={lvl}
                 onClick={() => setFilterLevel(lvl)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition ${
-                  filterLevel === lvl
-                    ? "bg-zepto-purple text-white glow-purple"
-                    : "bg-[#0F0F1A] text-slate-300 border border-zepto-border hover:border-zepto-purple"
-                }`}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition ${filterLevel === lvl
+                  ? "bg-zepto-purple text-white glow-purple"
+                  : "bg-[#0F0F1A] text-slate-300 border border-zepto-border hover:border-zepto-purple"
+                  }`}
               >
                 {lvl === "all" ? "All Levels" : lvl}
               </button>
@@ -1113,13 +1109,12 @@ function TabSpoilage({ stores }) {
                       <div className="text-slate-400 text-[11px] font-mono">{a.store_name} ({a.store_id})</div>
                     </td>
                     <td className="py-3.5 px-3">
-                      <span className={`inline-flex items-center justify-center w-9 h-9 rounded-xl font-bold text-sm ${
-                        a.spoilage_score >= 75
-                          ? "bg-red-500/20 text-red-400 border border-red-500/40 glow-red"
-                          : a.spoilage_score >= 50
+                      <span className={`inline-flex items-center justify-center w-9 h-9 rounded-xl font-bold text-sm ${a.spoilage_score >= 75
+                        ? "bg-red-500/20 text-red-400 border border-red-500/40 glow-red"
+                        : a.spoilage_score >= 50
                           ? "bg-amber-500/20 text-amber-300 border border-amber-500/40"
                           : "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40"
-                      }`}>
+                        }`}>
                         {a.spoilage_score}
                       </span>
                     </td>
@@ -1136,11 +1131,10 @@ function TabSpoilage({ stores }) {
                       {formatINR(a.potential_loss_inr)}
                     </td>
                     <td className="py-3.5 px-3 font-sans">
-                      <span className={`px-2.5 py-1 rounded-lg text-xs font-semibold ${
-                        a.spoilage_score >= 75
-                          ? "bg-red-500/20 text-red-300 border border-red-500/30"
-                          : "bg-amber-500/20 text-amber-300 border border-amber-500/30"
-                      }`}>
+                      <span className={`px-2.5 py-1 rounded-lg text-xs font-semibold ${a.spoilage_score >= 75
+                        ? "bg-red-500/20 text-red-300 border border-red-500/30"
+                        : "bg-amber-500/20 text-amber-300 border border-amber-500/30"
+                        }`}>
                         {a.action}
                       </span>
                     </td>
@@ -1258,11 +1252,10 @@ function TabTransfers({ stores }) {
                     <span className="text-xs font-heading font-bold text-white text-base group-hover:text-zepto-lightPurple transition">
                       {t.product_name}
                     </span>
-                    <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold ${
-                      t.urgency === "HIGH"
-                        ? "bg-red-500/20 text-red-300 border border-red-500/40"
-                        : "bg-purple-500/20 text-purple-300 border border-purple-500/40"
-                    }`}>
+                    <span className={`px-2 py-0.5 rounded-full text-[11px] font-bold ${t.urgency === "HIGH"
+                      ? "bg-red-500/20 text-red-300 border border-red-500/40"
+                      : "bg-purple-500/20 text-purple-300 border border-purple-500/40"
+                      }`}>
                       {t.urgency} URGENCY
                     </span>
                   </div>
@@ -1324,12 +1317,12 @@ function TabTrends({ stores }) {
     fetch(url)
       .then(r => r.json())
       .then(d => setTrendData(Array.isArray(d) ? d : []))
-      .catch(() => {});
+      .catch(() => { });
 
     fetch(`${API_BASE}/skus`)
       .then(r => r.json())
       .then(d => setSkus(Array.isArray(d) ? d : []))
-      .catch(() => {});
+      .catch(() => { });
   }, [selectedStore]);
 
   // Category-wise waste aggregation
@@ -1471,7 +1464,7 @@ function TabModulesIntel() {
     fetch(`${API_BASE}/modules-intel`)
       .then(r => r.json())
       .then(d => setIntel(d))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   return (
@@ -1843,19 +1836,19 @@ export default function App() {
     fetch(`${API_BASE}/summary`)
       .then(r => r.json())
       .then(d => setSummary(d))
-      .catch(() => {});
+      .catch(() => { });
 
     // ROI
     fetch(`${API_BASE}/roi`)
       .then(r => r.json())
       .then(d => setRoi(d))
-      .catch(() => {});
+      .catch(() => { });
 
     // Stores
     fetch(`${API_BASE}/stores`)
       .then(r => r.json())
       .then(d => setStores(Array.isArray(d) ? d : []))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   const navTabs = [
@@ -1921,11 +1914,10 @@ export default function App() {
                       setTab(nav.id);
                       setDrawerOpen(false);
                     }}
-                    className={`w-full text-left px-4 py-3 rounded-xl font-heading font-medium text-sm transition-all flex items-center justify-between ${
-                      tab === nav.id
-                        ? "bg-gradient-to-r from-zepto-purple to-zepto-darkPurple text-white font-bold shadow-lg glow-purple"
-                        : "text-slate-300 hover:text-white hover:bg-white/5"
-                    }`}
+                    className={`w-full text-left px-4 py-3 rounded-xl font-heading font-medium text-sm transition-all flex items-center justify-between ${tab === nav.id
+                      ? "bg-gradient-to-r from-zepto-purple to-zepto-darkPurple text-white font-bold shadow-lg glow-purple"
+                      : "text-slate-300 hover:text-white hover:bg-white/5"
+                      }`}
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-base">{nav.icon}</span>
@@ -2011,11 +2003,10 @@ export default function App() {
                 <button
                   key={nav.id}
                   onClick={() => setTab(nav.id)}
-                  className={`px-3.5 py-2 rounded-lg font-heading font-medium text-xs whitespace-nowrap transition-all flex items-center gap-1.5 ${
-                    tab === nav.id
-                      ? "bg-zepto-purple text-white font-bold shadow-md glow-purple"
-                      : "text-slate-300 hover:text-white hover:bg-white/5"
-                  }`}
+                  className={`px-3.5 py-2 rounded-lg font-heading font-medium text-xs whitespace-nowrap transition-all flex items-center gap-1.5 ${tab === nav.id
+                    ? "bg-zepto-purple text-white font-bold shadow-md glow-purple"
+                    : "text-slate-300 hover:text-white hover:bg-white/5"
+                    }`}
                 >
                   <span>{nav.icon}</span>
                   <span>{nav.label}</span>
@@ -2059,10 +2050,18 @@ export default function App() {
               </ul>
             </div>
             <div>
-              <h4 className="font-heading font-semibold text-white mb-2">Built By</h4>
-              <p className="text-white font-medium">Sumit Kumar</p>
-              <p className="text-slate-400 text-[11px]">MCA @ KIIT University, Bhubaneswar</p>
-              <p className="text-zepto-lightPurple text-[11px] mt-1 font-mono">sumitranjanhisu@gmail.com</p>
+              <h4 className="font-heading font-semibold text-white mb-2">Find Problems. Build Better Solutions.</h4>
+              <p className="text-white font-medium">I find website problems, understand their root cause, and turn them into practical solutions.
+                Want your website analyzed?
+                <a
+                  href="https://sumitkportfoliodev.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-3 px-4 py-2 rounded-lg bg-zepto-lightPurple text-white text-sm font-semibold hover:opacity-90 transition"
+                >
+                  Let’s talk.
+                </a></p>
+
             </div>
           </div>
           <div className="pt-4 border-t border-zepto-border/60 flex flex-wrap items-center justify-between gap-2 text-[11px] text-zepto-muted">
