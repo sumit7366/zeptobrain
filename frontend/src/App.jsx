@@ -269,13 +269,22 @@ function AIChatbot() {
         </div>
       )}
 
-      {/* Floating Toggle Button */}
+      {/* Floating AI Logo Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="h-14 px-5 bg-gradient-to-r from-zepto-purple to-zepto-darkPurple hover:brightness-110 text-white rounded-full shadow-2xl flex items-center gap-2.5 font-heading font-semibold text-sm border border-purple-400/30 glow-purple transition-all duration-300 hover:scale-105 active:scale-95"
+        className="w-14 h-14 bg-gradient-to-tr from-zepto-purple via-purple-600 to-indigo-600 hover:brightness-110 text-white rounded-full shadow-2xl flex items-center justify-center border border-purple-400/40 glow-purple transition-all duration-300 hover:scale-110 active:scale-95 group relative"
+        title="Zepto AI Assistant"
+        aria-label="Zepto AI Assistant"
       >
-        <span className="text-xl animate-pulse">⚡</span>
-        <span>{open ? "Close Intelligence AI" : "ZeptoBrain AI Assistant"}</span>
+        {open ? (
+          <X className="w-6 h-6 text-white" />
+        ) : (
+          <div className="flex flex-col items-center justify-center">
+            <span className="text-xl leading-none">🤖</span>
+            <span className="text-[9px] font-black tracking-wider uppercase text-purple-200 mt-0.5">AI</span>
+          </div>
+        )}
+        <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-zepto-green rounded-full border-2 border-[#0F0F1A] animate-pulse" />
       </button>
     </div>
   );
@@ -1459,141 +1468,348 @@ function TabModulesIntel() {
       .catch(() => {});
   }, []);
 
-  if (!intel) {
-    return (
-      <div className="glass-card rounded-2xl p-12 text-center text-slate-400">
-        <RefreshCw className="w-8 h-8 animate-spin mx-auto mb-2 text-zepto-lightPurple" />
-        <div>Loading Operational Intelligence Suite...</div>
-      </div>
-    );
-  }
-
   return (
     <div className="space-y-8 animate-in fade-in duration-300">
-      <div className="glass-card rounded-2xl p-6 md:p-8 border border-zepto-border">
-        <div className="flex flex-wrap items-center justify-between gap-4">
+      {/* Top Banner */}
+      <div className="glass-card rounded-2xl p-6 md:p-8 border border-zepto-border relative overflow-hidden bg-gradient-to-r from-zepto-card via-[#1A1A2E] to-zepto-purple/20">
+        <div className="flex flex-wrap items-center justify-between gap-4 relative z-10">
           <div>
-            <h2 className="text-2xl font-heading font-bold text-white flex items-center gap-2.5">
-              <Zap className="w-6 h-6 text-amber-400" /> Operational Intelligence Modules Suite (Problems 4 to 10)
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zepto-purple/20 border border-zepto-purple/40 text-zepto-lightPurple text-xs font-mono font-bold mb-2">
+              ⚡ COMPLETE OPERATIONAL SUITE
+            </div>
+            <h2 className="text-2xl md:text-3xl font-heading font-black text-white flex items-center gap-2.5">
+              10 AI & Operational Intelligence Modules
             </h2>
-            <p className="text-xs text-slate-300 mt-1">
-              Deep dive into Delivery Agent Retention, Route Loss Reduction, Complaint NLP Sentiment, Dark Store Benchmarking, and Worker Picking TSP.
+            <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
+              Engineered to resolve Zepto's ₹13,514 Cr cumulative losses, reduce per-order loss from ₹136.15 to ₹78.75, and unlock ₹1,186 Crore in annual operational recovery ahead of the ₹11,000–12,000 Cr IPO.
             </p>
           </div>
-          <span className="px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono font-bold text-xs">
-            Total Impact: ₹1,186 Cr / Year
-          </span>
+          <div className="text-right">
+            <div className="text-xs text-zepto-muted font-mono uppercase tracking-wider">Total Annual Platform Impact</div>
+            <div className="text-3xl md:text-4xl font-heading font-black text-zepto-green glow-green">
+              ₹1,186 Cr / yr
+            </div>
+            <div className="text-[11px] text-slate-400 font-mono mt-0.5">10 Integrated Autonomous Engines</div>
+          </div>
         </div>
       </div>
 
-      {/* Grid of Intelligence Cards */}
+      {/* Grid of All 10 AI Modules */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Module 4: Agent Retention */}
-        <div className="glass-card rounded-2xl p-6 border border-zepto-border">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="font-heading font-bold text-white flex items-center gap-2">
-              <Users className="w-5 h-5 text-zepto-lightPurple" /> Delivery Agent Retention & Flight Risk
+
+        {/* Module 1: XGBoost Demand Forecast */}
+        <div className="glass-card rounded-2xl p-6 border border-zepto-border flex flex-col justify-between hover:border-zepto-purple/50 transition">
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-purple-500/15 text-purple-300 font-bold">
+                Module 01 • ML Core
+              </span>
+              <span className="text-xs font-mono text-zepto-green font-bold">+₹360 Cr / yr</span>
+            </div>
+            <h3 className="font-heading font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-zepto-lightPurple" /> 7-Day XGBoost Demand Forecast
             </h3>
-            <span className="text-xs font-mono text-zepto-green font-bold">+₹5.6 Cr Saved</span>
-          </div>
-          <p className="text-xs text-slate-300 mb-4">
-            73.22% annual frontline churn replaced at ₹8,000 per worker. Flight risk engine tracks 3+ low earning days.
-          </p>
-          <div className="space-y-2">
-            {intel.agent_retention?.flight_risk_agents?.map((ag, i) => (
-              <div key={i} className="p-3 rounded-xl bg-[#0F0F1A] border border-zepto-border text-xs flex items-center justify-between">
-                <div>
-                  <div className="font-bold text-white">{ag.name} <span className="text-slate-400 font-mono">({ag.agent_id})</span></div>
-                  <div className="text-slate-400 text-[11px]">{ag.store} • Rating: {ag.rating}★</div>
-                  <div className="text-amber-400 text-[10px] mt-0.5">{ag.recommended_action}</div>
-                </div>
-                <div className="text-right">
-                  <div className="text-xs font-bold text-red-400 font-mono">{ag.flight_risk_score}% Risk</div>
-                  <div className="text-[10px] text-slate-400">{ag.low_earnings_days} low days</div>
-                </div>
+            <p className="text-xs text-slate-300 leading-relaxed mb-4">
+              Gradient-boosted decision tree architecture with 21 temporal, rolling lag (1d, 7d, 14d), festival multipliers, and dark store locality wealth indices.
+            </p>
+            <div className="grid grid-cols-2 gap-2 text-xs font-mono-data mb-3">
+              <div className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
+                <span className="text-slate-400 text-[10px] block">Test Set MAPE</span>
+                <span className="text-zepto-green font-bold text-base">12.9%</span>
               </div>
-            ))}
+              <div className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
+                <span className="text-slate-400 text-[10px] block">Forecast Horizon</span>
+                <span className="text-white font-bold text-base">7-Days Daily</span>
+              </div>
+            </div>
+          </div>
+          <div className="pt-3 border-t border-zepto-border text-[11px] text-slate-400">
+            <strong className="text-white">Operational Impact:</strong> Eliminates blind over-ordering in perishable fruits, veggies & dairy.
           </div>
         </div>
 
-        {/* Module 5: Route Cost & Batch Efficiency */}
-        <div className="glass-card rounded-2xl p-6 border border-zepto-border">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="font-heading font-bold text-white flex items-center gap-2">
-              <Navigation className="w-5 h-5 text-cyan-400" /> Route Efficiency & Batch Optimization
+        {/* Module 2: 0-100 Spoilage Risk Engine */}
+        <div className="glass-card rounded-2xl p-6 border border-zepto-border flex flex-col justify-between hover:border-zepto-purple/50 transition">
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-red-500/15 text-red-300 font-bold">
+                Module 02 • Risk Engine
+              </span>
+              <span className="text-xs font-mono text-zepto-green font-bold">+₹96 Cr / yr</span>
+            </div>
+            <h3 className="font-heading font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <AlertTriangle className="w-5 h-5 text-red-400" /> 0–100 Spoilage Risk Scoring
             </h3>
-            <span className="text-xs font-mono text-zepto-green font-bold">+₹252 Cr Saved</span>
-          </div>
-          <p className="text-xs text-slate-300 mb-4">
-            Loss per order in FY26 stands at <strong className="text-white">₹78.75</strong> across 640M annual orders. 500m cluster batching reduces transport cost by 43%.
-          </p>
-          <div className="grid grid-cols-2 gap-3 text-xs font-mono-data mb-4">
-            <div className="p-3 rounded-xl bg-[#0F0F1A] border border-zepto-border">
-              <div className="text-slate-400 text-[10px]">FY25 Loss / Order</div>
-              <div className="text-red-400 font-bold text-lg">₹136.15</div>
+            <p className="text-xs text-slate-300 leading-relaxed mb-4">
+              Real-time scoring combining shelf-life countdown pressure (0-40 pts) and stock-to-velocity excess ratio (0-40 pts) multiplied by category perishability weight.
+            </p>
+            <div className="grid grid-cols-2 gap-2 text-xs font-mono-data mb-3">
+              <div className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
+                <span className="text-slate-400 text-[10px] block">Critical Threshold</span>
+                <span className="text-red-400 font-bold text-base">Score ≥ 75</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
+                <span className="text-slate-400 text-[10px] block">Auto Trigger</span>
+                <span className="text-amber-300 font-bold text-base">Flash 30% Off</span>
+              </div>
             </div>
-            <div className="p-3 rounded-xl bg-[#0F0F1A] border border-zepto-border">
-              <div className="text-slate-400 text-[10px]">FY26 Loss / Order</div>
-              <div className="text-amber-400 font-bold text-lg">₹78.75</div>
+          </div>
+          <div className="pt-3 border-t border-zepto-border text-[11px] text-slate-400">
+            <strong className="text-white">Operational Impact:</strong> Prevents spoiled deliveries, customer refunds, and total batch write-offs.
+          </div>
+        </div>
+
+        {/* Module 3: Inter-Store Haversine Balancer */}
+        <div className="glass-card rounded-2xl p-6 border border-zepto-border flex flex-col justify-between hover:border-zepto-purple/50 transition">
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 font-bold">
+                Module 03 • Logistics
+              </span>
+              <span className="text-xs font-mono text-zepto-green font-bold">+₹54 Cr / yr</span>
+            </div>
+            <h3 className="font-heading font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <ArrowRightLeft className="w-5 h-5 text-emerald-400" /> Inter-Store Transfer Optimizer
+            </h3>
+            <p className="text-xs text-slate-300 leading-relaxed mb-4">
+              Greedy transfer matching based on GPS Haversine distance (&lt;10km). Shifts surplus items from overstocked stores to high-demand deficit stores.
+            </p>
+            <div className="grid grid-cols-2 gap-2 text-xs font-mono-data mb-3">
+              <div className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
+                <span className="text-slate-400 text-[10px] block">Max Distance</span>
+                <span className="text-cyan-300 font-bold text-base">&lt; 10.0 km</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
+                <span className="text-slate-400 text-[10px] block">Economic Benefit</span>
+                <span className="text-zepto-green font-bold text-base">Dual Loss Save</span>
+              </div>
             </div>
           </div>
-          <div className="p-3 rounded-xl bg-zepto-purple/15 border border-zepto-purple/30 text-xs text-purple-200">
-            <strong>Golden Hours for Batch Trips:</strong> {intel.route_efficiency?.golden_hours?.join(" • ")}
+          <div className="pt-3 border-t border-zepto-border text-[11px] text-slate-400">
+            <strong className="text-white">Operational Impact:</strong> Solves inventory mismatch between suburban and commercial dark store hubs.
+          </div>
+        </div>
+
+        {/* Module 4: Delivery Agent Retention */}
+        <div className="glass-card rounded-2xl p-6 border border-zepto-border flex flex-col justify-between hover:border-zepto-purple/50 transition">
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-purple-500/15 text-purple-300 font-bold">
+                Module 04 • Workforce AI
+              </span>
+              <span className="text-xs font-mono text-zepto-green font-bold">+₹5.6 Cr / yr</span>
+            </div>
+            <h3 className="font-heading font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <Users className="w-5 h-5 text-zepto-lightPurple" /> Delivery Agent Retention & Flight Risk
+            </h3>
+            <p className="text-xs text-slate-300 leading-relaxed mb-3">
+              73.22% annual frontline churn replaced at ₹8,000 per rider. Flight risk engine tracks consecutive low earning days (&lt;₹500/day).
+            </p>
+            {intel?.agent_retention?.flight_risk_agents && (
+              <div className="space-y-1.5 mb-3">
+                {intel.agent_retention.flight_risk_agents.slice(0, 2).map((ag, i) => (
+                  <div key={i} className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border text-xs flex items-center justify-between">
+                    <div>
+                      <div className="font-bold text-white">{ag.name} <span className="text-slate-400 font-mono">({ag.agent_id})</span></div>
+                      <div className="text-amber-400 text-[10px]">{ag.recommended_action}</div>
+                    </div>
+                    <div className="text-right font-mono font-bold text-red-400">{ag.flight_risk_score}% Risk</div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="pt-3 border-t border-zepto-border text-[11px] text-slate-400">
+            <strong className="text-white">Operational Impact:</strong> Retains top-rated riders and stops constant onboarding churn costs.
+          </div>
+        </div>
+
+        {/* Module 5: Route Efficiency & Order Batching */}
+        <div className="glass-card rounded-2xl p-6 border border-zepto-border flex flex-col justify-between hover:border-zepto-purple/50 transition">
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-cyan-500/15 text-cyan-300 font-bold">
+                Module 05 • Route AI
+              </span>
+              <span className="text-xs font-mono text-zepto-green font-bold">+₹252 Cr / yr</span>
+            </div>
+            <h3 className="font-heading font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <Navigation className="w-5 h-5 text-cyan-400" /> Route Cost & Batch Optimization
+            </h3>
+            <p className="text-xs text-slate-300 leading-relaxed mb-3">
+              Loss per order is ₹78.75 in FY26 across 640M orders. 500m cluster batching combines proximate drop-offs, slashing delivery cost per order by 43%.
+            </p>
+            <div className="grid grid-cols-2 gap-2 text-xs font-mono-data mb-3">
+              <div className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
+                <span className="text-slate-400 text-[10px] block">Cluster Radius</span>
+                <span className="text-cyan-400 font-bold text-base">500 meters</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
+                <span className="text-slate-400 text-[10px] block">Rush Hour Mode</span>
+                <span className="text-amber-400 font-bold text-base">2 Orders / Trip</span>
+              </div>
+            </div>
+          </div>
+          <div className="pt-3 border-t border-zepto-border text-[11px] text-slate-400">
+            <strong className="text-white">Operational Impact:</strong> Directly drives quick-commerce contribution margin to profitability.
+          </div>
+        </div>
+
+        {/* Module 6: Intelligent Reorder Engine */}
+        <div className="glass-card rounded-2xl p-6 border border-zepto-border flex flex-col justify-between hover:border-zepto-purple/50 transition">
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-300 font-bold">
+                Module 06 • Supply Chain
+              </span>
+              <span className="text-xs font-mono text-zepto-green font-bold">+₹56 Cr / yr</span>
+            </div>
+            <h3 className="font-heading font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <Package className="w-5 h-5 text-amber-400" /> Intelligent Vendor Reorder Engine
+            </h3>
+            <p className="text-xs text-slate-300 leading-relaxed mb-3">
+              Dynamic days-of-stock countdown factoring vendor lead time and safety stock buffer. Generates automated purchase orders when stock &lt; 2.5 days.
+            </p>
+            <div className="p-3 rounded-xl bg-[#0F0F1A] border border-zepto-border text-xs mb-3 space-y-1">
+              <div className="flex justify-between">
+                <span className="text-slate-400">Reorder Formula:</span>
+                <span className="font-mono text-purple-300">(Lead Time × Daily Vel) + Safety Stock</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-400">Stockout Prevention:</span>
+                <span className="font-mono text-zepto-green font-bold">98.4% In-Stock Rate</span>
+              </div>
+            </div>
+          </div>
+          <div className="pt-3 border-t border-zepto-border text-[11px] text-slate-400">
+            <strong className="text-white">Operational Impact:</strong> Prevents revenue loss from high-velocity SKU stockouts during evening rush.
           </div>
         </div>
 
         {/* Module 7: Customer Complaints NLP */}
-        <div className="glass-card rounded-2xl p-6 border border-zepto-border">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="font-heading font-bold text-white flex items-center gap-2">
-              <HeartHandshake className="w-5 h-5 text-rose-400" /> Customer Complaint NLP Sentiment
+        <div className="glass-card rounded-2xl p-6 border border-zepto-border flex flex-col justify-between hover:border-zepto-purple/50 transition">
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-rose-500/15 text-rose-300 font-bold">
+                Module 07 • NLP Sentiment
+              </span>
+              <span className="text-xs font-mono text-zepto-green font-bold">+₹150 Cr LTV</span>
+            </div>
+            <h3 className="font-heading font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <HeartHandshake className="w-5 h-5 text-rose-400" /> Complaint NLP Sentiment & Store Health
             </h3>
-            <span className="text-xs font-mono text-zepto-green font-bold">+₹150 Cr LTV</span>
-          </div>
-          <p className="text-xs text-slate-300 mb-3">
-            Scrapes reviews (Trustpilot, ConsumerComplaints.in) to correlate store spoilage with refund churn.
-          </p>
-          <div className="space-y-1.5 text-xs">
-            {intel.customer_complaints?.complaint_categories?.map((cat, i) => (
-              <div key={i} className="flex items-center justify-between p-2 rounded-lg bg-[#0F0F1A] border border-zepto-border">
-                <span className="text-white font-medium">{cat.category}</span>
-                <span className="text-zepto-lightPurple font-mono font-bold">{cat.pct}%</span>
+            <p className="text-xs text-slate-300 leading-relaxed mb-3">
+              Scrapes customer review feeds (Trustpilot, ConsumerComplaints.in), classifies into 5 root causes, and correlates 0.91 with store spoilage.
+            </p>
+            {intel?.customer_complaints?.complaint_categories && (
+              <div className="grid grid-cols-2 gap-1.5 text-xs mb-3">
+                {intel.customer_complaints.complaint_categories.slice(0, 4).map((cat, i) => (
+                  <div key={i} className="p-2 rounded-lg bg-[#0F0F1A] border border-zepto-border flex justify-between">
+                    <span className="text-slate-300 truncate mr-1">{cat.category}</span>
+                    <span className="text-zepto-lightPurple font-mono font-bold">{cat.pct}%</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
+          </div>
+          <div className="pt-3 border-t border-zepto-border text-[11px] text-slate-400">
+            <strong className="text-white">Operational Impact:</strong> Alerts store managers to bad quality batches before refund churn escalates.
           </div>
         </div>
 
-        {/* Module 9 & 10: Ads & Picker Path TSP */}
-        <div className="glass-card rounded-2xl p-6 border border-zepto-border flex flex-col justify-between">
+        {/* Module 8: Dark Store Location Benchmarking */}
+        <div className="glass-card rounded-2xl p-6 border border-zepto-border flex flex-col justify-between hover:border-zepto-purple/50 transition">
           <div>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-heading font-bold text-white flex items-center gap-2">
-                <Megaphone className="w-5 h-5 text-amber-400" /> Ad Lift & Picker Path TSP Simulator
-              </h3>
-              <span className="text-xs font-mono text-zepto-green font-bold">+₹193 Cr Combined</span>
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-indigo-500/15 text-indigo-300 font-bold">
+                Module 08 • Geospatial
+              </span>
+              <span className="text-xs font-mono text-zepto-green font-bold">+₹20 Cr / yr</span>
             </div>
-            <p className="text-xs text-slate-300 mb-3">
-              Ad revenue grew 33x to ₹1,636 Cr (7.78% of GMV). Picker TSP path graph modeling speeds cart fulfillments.
+            <h3 className="font-heading font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <Building2 className="w-5 h-5 text-indigo-400" /> Location & Cannibalization Analyzer
+            </h3>
+            <p className="text-xs text-slate-300 leading-relaxed mb-3">
+              Dark store revenue-per-sqft breakeven modeling. Evaluates demographic density and ensures a minimum 1.5km buffer to prevent store-on-store cannibalization.
+            </p>
+            <div className="grid grid-cols-2 gap-2 text-xs font-mono-data mb-3">
+              <div className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
+                <span className="text-slate-400 text-[10px] block">Cannibalization Buffer</span>
+                <span className="text-indigo-300 font-bold text-base">&gt; 1.5 km</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
+                <span className="text-slate-400 text-[10px] block">Breakeven Density</span>
+                <span className="text-emerald-300 font-bold text-base">3,200 orders/day</span>
+              </div>
+            </div>
+          </div>
+          <div className="pt-3 border-t border-zepto-border text-[11px] text-slate-400">
+            <strong className="text-white">Operational Impact:</strong> Prevents ₹2-5 Cr in wasted Capex per unprofitable dark store lease.
+          </div>
+        </div>
+
+        {/* Module 9: Ad Lift & Brand Campaign Targeting */}
+        <div className="glass-card rounded-2xl p-6 border border-zepto-border flex flex-col justify-between hover:border-zepto-purple/50 transition">
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-300 font-bold">
+                Module 09 • Ad Intelligence
+              </span>
+              <span className="text-xs font-mono text-zepto-green font-bold">+₹163 Cr / yr</span>
+            </div>
+            <h3 className="font-heading font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <Megaphone className="w-5 h-5 text-amber-400" /> Ad Lift & Campaign Targeting Engine
+            </h3>
+            <p className="text-xs text-slate-300 leading-relaxed mb-3">
+              Ad revenue surged 33x to ₹1,636 Cr (7.78% of GMV). Measures store-level demand lift (e.g. +47% in Bandra vs +12% in Malad) and auto-adjusts stock buffers.
             </p>
             <div className="p-3 rounded-xl bg-[#0F0F1A] border border-zepto-border text-xs mb-3 space-y-1">
               <div className="flex justify-between">
-                <span className="text-slate-400">Unoptimized Picking:</span>
-                <span className="text-red-400 font-mono">8.6 items / min</span>
+                <span className="text-slate-400">Total Zepto Ad GMV:</span>
+                <span className="font-mono text-white font-bold">₹1,636 Cr (FY26)</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400">TSP Optimized Path:</span>
-                <span className="text-zepto-green font-mono font-bold">14.2 items / min (+65%)</span>
-              </div>
-              <div className="flex justify-between text-[11px] text-purple-300 pt-1 border-t border-zepto-border">
-                <span>Cycle Time Reduction:</span>
-                <span className="font-bold">-39% faster</span>
+                <span className="text-slate-400">Targeting Efficiency Gain:</span>
+                <span className="font-mono text-zepto-green font-bold">10% Direct Uplift</span>
               </div>
             </div>
           </div>
-          <div className="text-[11px] text-slate-400 italic">
-            Ad Lift Proof: Lays campaign drove +47% demand lift in Bandra vs +12% in Malad, informing automated store pre-stocking.
+          <div className="pt-3 border-t border-zepto-border text-[11px] text-slate-400">
+            <strong className="text-white">Operational Impact:</strong> Gives FMCG brand advertisers measurable store-level ROI and prevents campaign stockouts.
           </div>
         </div>
+
+        {/* Module 10: Picker Path TSP Simulator */}
+        <div className="glass-card rounded-2xl p-6 border border-zepto-border flex flex-col justify-between hover:border-zepto-purple/50 transition">
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-300 font-bold">
+                Module 10 • In-Store Robotics
+              </span>
+              <span className="text-xs font-mono text-zepto-green font-bold">+₹30 Cr / yr</span>
+            </div>
+            <h3 className="font-heading font-bold text-lg text-white mb-2 flex items-center gap-2">
+              <Zap className="w-5 h-5 text-emerald-400" /> Dark Store Picker Path TSP Simulator
+            </h3>
+            <p className="text-xs text-slate-300 leading-relaxed mb-3">
+              Graph-based aisle layout modeling applying Travelling Salesperson Problem (TSP) approximation. Shortens walking path for 48,011 store pickers.
+            </p>
+            <div className="grid grid-cols-2 gap-2 text-xs font-mono-data mb-3">
+              <div className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
+                <span className="text-slate-400 text-[10px] block">Unoptimized Picking</span>
+                <span className="text-red-400 font-bold text-base">8.6 items / min</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
+                <span className="text-slate-400 text-[10px] block">TSP Path Picking</span>
+                <span className="text-zepto-green font-bold text-base">14.2 items / min</span>
+              </div>
+            </div>
+          </div>
+          <div className="pt-3 border-t border-zepto-border text-[11px] text-slate-400">
+            <strong className="text-white">Operational Impact:</strong> Cuts picking cycle time by 39%, guaranteeing sub-10 minute dispatch.
+          </div>
+        </div>
+
       </div>
     </div>
   );
@@ -1648,7 +1864,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#0F0F1A] text-slate-100 flex flex-col font-body selection:bg-zepto-purple selection:text-white">
-      {/* Slide-out Drawer from Left (Hamburger Menu) */}
+      {/* Slide-out Drawer from Left (Mobile Navigation Menu) */}
       {drawerOpen && (
         <div className="fixed inset-0 z-50 flex animate-in fade-in duration-200">
           {/* Backdrop */}
@@ -1754,11 +1970,11 @@ export default function App() {
       <header className="sticky top-0 z-40 glass-panel border-b border-zepto-border shadow-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5">
           <div className="flex items-center justify-between gap-4">
-            {/* Hamburger Button + Logo on Left */}
+            {/* Hamburger Button (Mobile only) + Logo */}
             <div className="flex items-center gap-2.5 sm:gap-3.5">
               <button
                 onClick={() => setDrawerOpen(true)}
-                className="p-2 sm:p-2.5 rounded-xl bg-[#1A1A2E] hover:bg-zepto-purple/20 border border-zepto-border hover:border-zepto-purple text-slate-200 hover:text-white transition flex items-center justify-center group shadow-md"
+                className="lg:hidden p-2 sm:p-2.5 rounded-xl bg-[#1A1A2E] hover:bg-zepto-purple/20 border border-zepto-border hover:border-zepto-purple text-slate-200 hover:text-white transition flex items-center justify-center group shadow-md"
                 title="Open Navigation Menu"
                 aria-label="Open Navigation Menu"
               >
@@ -1783,7 +1999,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Navigation Tabs (Desktop) */}
+            {/* Desktop Navigation Tabs */}
             <nav className="hidden lg:flex items-center gap-1.5 bg-[#0F0F1A] p-1 rounded-xl border border-zepto-border">
               {navTabs.map(nav => (
                 <button
@@ -1800,22 +2016,6 @@ export default function App() {
                 </button>
               ))}
             </nav>
-
-            {/* Live API Status */}
-            <div className="flex items-center gap-2">
-              <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono font-medium border ${
-                connected === true
-                  ? "bg-emerald-500/10 text-emerald-300 border-emerald-500/30"
-                  : connected === false
-                  ? "bg-red-500/10 text-red-300 border-red-500/30"
-                  : "bg-slate-500/10 text-slate-300 border-slate-500/30"
-              }`}>
-                <span className={`w-2 h-2 rounded-full ${
-                  connected === true ? "bg-zepto-green animate-pulse" : connected === false ? "bg-zepto-red" : "bg-slate-400"
-                }`} />
-                <span>{connected === true ? "API Live" : connected === false ? "API Offline" : "Connecting..."}</span>
-              </span>
-            </div>
           </div>
         </div>
       </header>
