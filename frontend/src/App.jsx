@@ -213,8 +213,8 @@ function AIChatbot() {
           {/* Header */}
           <div className="bg-gradient-to-r from-zepto-purple to-zepto-darkPurple p-4 flex items-center justify-between text-white border-b border-zepto-border">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center font-bold text-lg">
-                ⚡
+              <div className="w-10 h-10 rounded-xl bg-[#0F0F1A]/90 p-1 border border-zepto-border flex items-center justify-center glow-purple">
+                <img src="/ai-bot.png" alt="ZeptoBrain AI" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="font-heading font-bold text-base leading-tight">ZeptoBrain AI</h3>
@@ -234,17 +234,22 @@ function AIChatbot() {
             {messages.map((msg, i) => (
               <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div
-                  className={`max-w-[90%] p-3.5 rounded-xl leading-relaxed ${
+                  className={`max-w-[90%] p-3.5 rounded-xl leading-relaxed flex items-start gap-2.5 ${
                     msg.role === "user"
                       ? "bg-zepto-purple text-white font-medium"
                       : "bg-zepto-card border border-zepto-border text-slate-200"
                   }`}
                 >
-                  {msg.text.split("\n").map((line, j) => (
-                    <div key={j} className={line.startsWith("•") || line.startsWith("1.") ? "ml-1 my-0.5" : "my-0.5"}>
-                      {line}
-                    </div>
-                  ))}
+                  {msg.role === "bot" && (
+                    <img src="/ai-bot.png" alt="Bot" className="w-5 h-5 object-contain flex-shrink-0 mt-0.5" />
+                  )}
+                  <div>
+                    {msg.text.split("\n").map((line, j) => (
+                      <div key={j} className={line.startsWith("•") || line.startsWith("1.") ? "ml-1 my-0.5" : "my-0.5"}>
+                        {line}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -269,22 +274,23 @@ function AIChatbot() {
         </div>
       )}
 
-      {/* Floating AI Logo Button */}
+      {/* Floating AI Logo Button (Transparent Logo) */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-14 h-14 bg-gradient-to-tr from-zepto-purple via-purple-600 to-indigo-600 hover:brightness-110 text-white rounded-full shadow-2xl flex items-center justify-center border border-purple-400/40 glow-purple transition-all duration-300 hover:scale-110 active:scale-95 group relative"
+        className="w-16 h-16 bg-gradient-to-tr from-[#1A1A2E] via-[#241A45] to-zepto-purple/40 hover:brightness-125 rounded-full shadow-2xl flex items-center justify-center border-2 border-zepto-purple/60 glow-purple transition-all duration-300 hover:scale-110 active:scale-95 group relative"
         title="Zepto AI Assistant"
         aria-label="Zepto AI Assistant"
       >
         {open ? (
-          <X className="w-6 h-6 text-white" />
+          <X className="w-7 h-7 text-white" />
         ) : (
-          <div className="flex flex-col items-center justify-center">
-            <span className="text-xl leading-none">🤖</span>
-            <span className="text-[9px] font-black tracking-wider uppercase text-purple-200 mt-0.5">AI</span>
-          </div>
+          <img
+            src="/ai-bot.png"
+            alt="Zepto AI Bot"
+            className="w-11 h-11 object-contain drop-shadow-[0_0_12px_rgba(108,60,225,0.95)] group-hover:scale-110 transition-transform"
+          />
         )}
-        <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-zepto-green rounded-full border-2 border-[#0F0F1A] animate-pulse" />
+        <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-zepto-green rounded-full border-2 border-[#0F0F1A] animate-pulse" />
       </button>
     </div>
   );

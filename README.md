@@ -126,10 +126,10 @@ npm start
 ### 5. again deploy on github 
 ```bash
 git add .
-git commit -m "fixed some issues"
+git commit -m "feat: add transparent AI robot logo for chatbot"
 git push origin main
-```
 
+```
 ---
 
 ## 📡 API Reference Overview
