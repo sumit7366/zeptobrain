@@ -131,6 +131,11 @@ python3 tests/test_all.py
 cd frontend && npm install && npm start
 ```
 
+### 7. GitHub Pages (optional)
+```bash
+git add .
+git commit -m "Redesign the page" && git push```
+
 ---
 
 ## 🌐 API Endpoints
