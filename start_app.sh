@@ -20,6 +20,5 @@ else
     echo "✅ ML model found"
 fi
 
-echo ""
-echo "🚀 Starting FastAPI server..."
-uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+echo "🚀 Starting FastAPI server on port ${PORT:-8000}..."
+uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-8000}

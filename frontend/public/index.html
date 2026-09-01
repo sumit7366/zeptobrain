@@ -1,14 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#1e293b" />
-    <meta name="description" content="ZeptoBrain — Dark Store Inventory Intelligence System" />
-    <title>ZeptoBrain</title>
+    <meta name="theme-color" content="#0F0F1A" />
+    <meta name="description" content="ZeptoBrain 2.0 — Dark Store Intelligence Platform for Zepto. AI-powered Demand Forecasting, Spoilage Risk Scoring, and Inter-Store Inventory Balancing." />
+    <title>ZeptoBrain 2.0 — Dark Store Intelligence</title>
+    
+    <!-- Google Fonts: Poppins (Headings), Inter (Body), JetBrains Mono (Data/Financials) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN with custom design tokens -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              zepto: {
+                purple: '#6C3CE1',
+                darkPurple: '#4A1FA8',
+                lightPurple: '#9B6FF5',
+                bg: '#0F0F1A',
+                card: '#1A1A2E',
+                cardHover: '#23233D',
+                border: '#2D2D50',
+                green: '#00C853',
+                red: '#FF3B30',
+                orange: '#FF6B35',
+                muted: '#8888AA',
+                subtle: '#A0A0C0',
+              }
+            },
+            fontFamily: {
+              heading: ['Poppins', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+              mono: ['"JetBrains Mono"', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0F0F1A;
+        color: #F8FAFC;
+        overflow-x: hidden;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+      }
+      .font-mono-data {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0F0F1A;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2D2D50;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #6C3CE1;
+      }
+      /* Glassmorphism utility */
+      .glass-panel {
+        background: rgba(26, 26, 46, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid #2D2D50;
+      }
+      .glass-card {
+        background: rgba(26, 26, 46, 0.9);
+        border: 1px solid #2D2D50;
+        transition: all 0.25s ease-in-out;
+      }
+      .glass-card:hover {
+        border-color: #6C3CE1;
+        box-shadow: 0 8px 30px rgba(108, 60, 225, 0.2);
+      }
+      .glow-purple {
+        box-shadow: 0 0 25px rgba(108, 60, 225, 0.35);
+      }
+      .glow-green {
+        box-shadow: 0 0 20px rgba(0, 200, 83, 0.3);
+      }
+      .glow-red {
+        box-shadow: 0 0 20px rgba(255, 59, 48, 0.3);
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-[#0F0F1A] text-slate-100 antialiased selection:bg-[#6C3CE1] selection:text-white">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>

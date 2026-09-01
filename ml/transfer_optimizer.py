@@ -27,6 +27,8 @@ def get_transfer_recommendations(df_history=None, max_transfer_km=10):
     """
     if df_history is None:
         df_history = pd.read_csv(str(BASE_DIR / "data" / "inventory_history.csv"))
+    if not pd.api.types.is_datetime64_any_dtype(df_history['date']):
+        df_history = df_history.copy()
         df_history['date'] = pd.to_datetime(df_history['date'])
 
     with open(str(BASE_DIR / "data" / "stores.json")) as f:

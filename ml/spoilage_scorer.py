@@ -95,6 +95,8 @@ def get_all_spoilage_alerts(df_history=None, top_n=20):
     """
     if df_history is None:
         df_history = pd.read_csv(str(BASE_DIR / "data" / "inventory_history.csv"))
+    if not pd.api.types.is_datetime64_any_dtype(df_history['date']):
+        df_history = df_history.copy()
         df_history['date'] = pd.to_datetime(df_history['date'])
 
     # Use last 7 days for current state simulation
