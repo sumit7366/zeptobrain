@@ -123,6 +123,12 @@ npm install
 npm start
 # Dashboard opens at http://localhost:3000
 ```
+### 5. again deploy on github 
+```bash
+git add .
+git commit -m "fixed some issues"
+git push origin main
+```
 
 ---
 

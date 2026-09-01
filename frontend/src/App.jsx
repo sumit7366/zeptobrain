@@ -6,9 +6,9 @@ import {
 import {
   AlertTriangle, ArrowRightLeft, TrendingUp, Sparkles, Building2,
   Package, ShieldCheck, CheckCircle2, ChevronRight,
-  ExternalLink, MapPin, Layers, Zap, RefreshCw, BarChart3,
+  MapPin, Zap, RefreshCw, BarChart3,
   AlertOctagon, HeartHandshake, Navigation, Megaphone, Check,
-  Users, Compass
+  Users, Compass, Menu, X
 } from "lucide-react";
 
 // API Base URL with robust fallbacks
@@ -517,82 +517,6 @@ function TabAbout({ summary, roi }) {
             </div>
           );
         })()}
-      </div>
-
-      {/* Built By Sumit Kumar & Technical Stack Visual */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Author Card */}
-        <div className="glass-card rounded-2xl p-6 border border-zepto-purple/40 bg-gradient-to-br from-zepto-card via-[#1A1A2E] to-zepto-purple/10">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-zepto-purple to-purple-400 p-0.5 flex-shrink-0">
-              <div className="w-full h-full bg-zepto-card rounded-[14px] flex items-center justify-center text-xl font-heading font-bold text-white">
-                SK
-              </div>
-            </div>
-            <div>
-              <h3 className="font-heading font-bold text-lg text-white">Sumit Kumar</h3>
-              <p className="text-xs text-zepto-lightPurple font-medium">MCA Student + Full Stack + ML Engineer</p>
-              <p className="text-xs text-slate-400">KIIT University, Bhubaneswar (2025–2027)</p>
-            </div>
-          </div>
-          <p className="text-xs text-slate-300 leading-relaxed mb-4">
-            Built <strong className="text-white">ZeptoBrain 2.0</strong> as a production-level dark store intelligence engine targeting Zepto's ₹13,514 Cr cumulative losses ahead of the ₹11,000–12,000 Cr IPO.
-          </p>
-          <div className="space-y-2 text-xs font-mono">
-            <div className="flex items-center justify-between p-2 rounded-lg bg-[#0F0F1A] border border-zepto-border">
-              <span className="text-slate-400">Email:</span>
-              <a href="mailto:sumitranjanhisu@gmail.com" className="text-zepto-lightPurple hover:underline">sumitranjanhisu@gmail.com</a>
-            </div>
-            <div className="flex items-center justify-between p-2 rounded-lg bg-[#0F0F1A] border border-zepto-border">
-              <span className="text-slate-400">GitHub:</span>
-              <a href="https://github.com/YOUR_USERNAME/zeptobrain" target="_blank" rel="noreferrer" className="text-purple-300 hover:underline flex items-center gap-1">
-                zeptobrain <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
-            <div className="flex items-center justify-between p-2 rounded-lg bg-[#0F0F1A] border border-zepto-border">
-              <span className="text-slate-400">Backend API:</span>
-              <a href="https://zeptobrain-backend.up.railway.app/docs" target="_blank" rel="noreferrer" className="text-emerald-400 hover:underline flex items-center gap-1">
-                Swagger Docs <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Tech Stack Visual */}
-        <div className="lg:col-span-2 glass-card rounded-2xl p-6 border border-zepto-border">
-          <h3 className="text-lg font-heading font-bold text-white mb-4 flex items-center gap-2">
-            <Layers className="w-5 h-5 text-zepto-lightPurple" /> Production Tech Stack Architecture
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-            <div className="p-3.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
-              <div className="text-[11px] text-zepto-lightPurple font-semibold uppercase">ML & Analytics</div>
-              <div className="text-white font-bold mt-1">Python 3.11</div>
-              <div className="text-slate-400 mt-0.5">XGBoost 2.0.3, Scikit-learn, Pandas, NumPy</div>
-            </div>
-            <div className="p-3.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
-              <div className="text-[11px] text-emerald-400 font-semibold uppercase">Backend API</div>
-              <div className="text-white font-bold mt-1">FastAPI 0.111</div>
-              <div className="text-slate-400 mt-0.5">Uvicorn, Pydantic, SQLAlchemy 2.0</div>
-            </div>
-            <div className="p-3.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
-              <div className="text-[11px] text-cyan-400 font-semibold uppercase">Frontend</div>
-              <div className="text-white font-bold mt-1">React 18.2</div>
-              <div className="text-slate-400 mt-0.5">Recharts 2.8, Tailwind CSS, Lucide</div>
-            </div>
-            <div className="p-3.5 rounded-xl bg-[#0F0F1A] border border-zepto-border">
-              <div className="text-[11px] text-amber-400 font-semibold uppercase">Deployment</div>
-              <div className="text-white font-bold mt-1">Railway + Vercel</div>
-              <div className="text-slate-400 mt-0.5">Docker, Git CI/CD, 62 Tests Pass</div>
-            </div>
-          </div>
-
-          <div className="mt-4 p-3.5 rounded-xl bg-zepto-purple/10 border border-zepto-purple/30 text-xs text-purple-200 leading-relaxed flex items-center gap-3">
-            <ShieldCheck className="w-5 h-5 text-zepto-green flex-shrink-0" />
-            <span>
-              <strong>Automated Test Suite:</strong> 62/62 unit & API integration tests passing (100% pass rate) validating data integrity, XGBoost MAPE benchmarks, risk algorithms, and API endpoints.
-            </span>
-          </div>
-        </div>
       </div>
 
       {/* 20 References Library */}
@@ -1684,6 +1608,7 @@ export default function App() {
   const [roi, setRoi] = useState(null);
   const [stores, setStores] = useState([]);
   const [connected, setConnected] = useState(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
     // Health check
@@ -1723,29 +1648,143 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#0F0F1A] text-slate-100 flex flex-col font-body selection:bg-zepto-purple selection:text-white">
-      {/* Sticky Header with Zepto Branding */}
-      <header className="sticky top-0 z-40 glass-panel border-b border-zepto-border shadow-xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5">
-          <div className="flex items-center justify-between gap-4">
-            {/* Logo */}
-            <div className="flex items-center gap-3 cursor-pointer" onClick={() => setTab("about")}>
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-zepto-purple to-purple-800 p-0.5 glow-purple flex-shrink-0">
-                <div className="w-full h-full bg-[#1A1A2E] rounded-[10px] flex items-center justify-center text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-zepto-lightPurple to-white">
-                  ⚡
+      {/* Slide-out Drawer from Left (Hamburger Menu) */}
+      {drawerOpen && (
+        <div className="fixed inset-0 z-50 flex animate-in fade-in duration-200">
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm"
+            onClick={() => setDrawerOpen(false)}
+          />
+
+          {/* Drawer Panel */}
+          <div className="relative w-80 sm:w-96 max-w-[85vw] h-full bg-[#131322] border-r border-zepto-border shadow-2xl z-10 flex flex-col justify-between p-6 animate-in slide-in-from-left duration-300">
+            <div>
+              {/* Drawer Header */}
+              <div className="flex items-center justify-between pb-5 border-b border-zepto-border">
+                <div className="flex items-center gap-3 cursor-pointer" onClick={() => { setTab("about"); setDrawerOpen(false); }}>
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-zepto-purple to-purple-800 p-0.5 glow-purple flex-shrink-0">
+                    <div className="w-full h-full bg-[#1A1A2E] rounded-[10px] flex items-center justify-center text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-zepto-lightPurple to-white">
+                      ⚡
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-lg font-heading font-black tracking-tight leading-none text-white">
+                      <span className="text-zepto-lightPurple">Zepto</span>Brain
+                    </div>
+                    <div className="text-[10px] font-medium text-zepto-muted tracking-wide mt-0.5">
+                      Dark Store Intelligence Platform <span className="font-mono text-purple-400">v2.0</span>
+                    </div>
+                  </div>
                 </div>
+
+                <button
+                  onClick={() => setDrawerOpen(false)}
+                  className="p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-zepto-border text-slate-300 hover:text-white transition"
+                  aria-label="Close menu"
+                >
+                  <X className="w-5 h-5" />
+                </button>
               </div>
-              <div>
-                <div className="text-xl font-heading font-black tracking-tight leading-none text-white">
-                  <span className="text-zepto-lightPurple">Zepto</span>Brain
+
+              {/* Navigation Tabs in Drawer */}
+              <div className="mt-6 space-y-1.5">
+                <div className="text-[11px] font-semibold text-zepto-muted uppercase tracking-wider px-3 mb-2">
+                  All Navigation Modules
                 </div>
-                <div className="text-[10px] font-medium text-zepto-muted tracking-wide mt-0.5">
-                  Dark Store Intelligence Platform <span className="font-mono text-purple-400">v2.0</span>
+                {navTabs.map(nav => (
+                  <button
+                    key={nav.id}
+                    onClick={() => {
+                      setTab(nav.id);
+                      setDrawerOpen(false);
+                    }}
+                    className={`w-full text-left px-4 py-3 rounded-xl font-heading font-medium text-sm transition-all flex items-center justify-between ${
+                      tab === nav.id
+                        ? "bg-gradient-to-r from-zepto-purple to-zepto-darkPurple text-white font-bold shadow-lg glow-purple"
+                        : "text-slate-300 hover:text-white hover:bg-white/5"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-base">{nav.icon}</span>
+                      <span>{nav.label}</span>
+                    </div>
+                    <ChevronRight className="w-4 h-4 opacity-50" />
+                  </button>
+                ))}
+              </div>
+
+              {/* Quick Network Info */}
+              <div className="mt-6 p-4 rounded-xl bg-[#0F0F1A] border border-zepto-border space-y-2 text-xs">
+                <div className="text-zepto-muted font-semibold uppercase text-[10px]">Operations Monitored</div>
+                <div className="flex justify-between text-slate-300">
+                  <span>Mumbai Hubs:</span>
+                  <span className="font-mono text-white font-bold">5 Dark Stores</span>
+                </div>
+                <div className="flex justify-between text-slate-300">
+                  <span>Active Catalog:</span>
+                  <span className="font-mono text-white font-bold">82 SKUs</span>
+                </div>
+                <div className="flex justify-between text-slate-300">
+                  <span>Categories:</span>
+                  <span className="font-mono text-white font-bold">8 Categories</span>
+                </div>
+                <div className="flex justify-between text-slate-300 pt-1.5 border-t border-zepto-border">
+                  <span>Annual Savings:</span>
+                  <span className="font-mono text-zepto-green font-bold">₹1,186 Cr Potential</span>
                 </div>
               </div>
             </div>
 
-            {/* Navigation Tabs */}
-            <nav className="hidden md:flex items-center gap-1.5 bg-[#0F0F1A] p-1 rounded-xl border border-zepto-border">
+            {/* Drawer Bottom */}
+            <div className="pt-4 border-t border-zepto-border text-xs text-slate-400">
+              <div className="flex items-center justify-between text-[11px]">
+                <span>System Status:</span>
+                <span className="text-zepto-green font-mono font-semibold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-zepto-green animate-pulse" />
+                  {connected === true ? "API Live (Connected)" : "API Offline"}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Sticky Header with Zepto Branding */}
+      <header className="sticky top-0 z-40 glass-panel border-b border-zepto-border shadow-xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5">
+          <div className="flex items-center justify-between gap-4">
+            {/* Hamburger Button + Logo on Left */}
+            <div className="flex items-center gap-2.5 sm:gap-3.5">
+              <button
+                onClick={() => setDrawerOpen(true)}
+                className="p-2 sm:p-2.5 rounded-xl bg-[#1A1A2E] hover:bg-zepto-purple/20 border border-zepto-border hover:border-zepto-purple text-slate-200 hover:text-white transition flex items-center justify-center group shadow-md"
+                title="Open Navigation Menu"
+                aria-label="Open Navigation Menu"
+              >
+                <Menu className="w-5 h-5 text-slate-300 group-hover:text-zepto-lightPurple transition" />
+              </button>
+
+              {/* Logo */}
+              <div className="flex items-center gap-3 cursor-pointer" onClick={() => setTab("about")}>
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-zepto-purple to-purple-800 p-0.5 glow-purple flex-shrink-0">
+                  <div className="w-full h-full bg-[#1A1A2E] rounded-[10px] flex items-center justify-center text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-zepto-lightPurple to-white">
+                    ⚡
+                  </div>
+                </div>
+                <div>
+                  <div className="text-xl font-heading font-black tracking-tight leading-none text-white">
+                    <span className="text-zepto-lightPurple">Zepto</span>Brain
+                  </div>
+                  <div className="text-[10px] font-medium text-zepto-muted tracking-wide mt-0.5">
+                    Dark Store Intelligence Platform <span className="font-mono text-purple-400">v2.0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation Tabs (Desktop) */}
+            <nav className="hidden lg:flex items-center gap-1.5 bg-[#0F0F1A] p-1 rounded-xl border border-zepto-border">
               {navTabs.map(nav => (
                 <button
                   key={nav.id}
@@ -1777,21 +1816,6 @@ export default function App() {
                 <span>{connected === true ? "API Live" : connected === false ? "API Offline" : "Connecting..."}</span>
               </span>
             </div>
-          </div>
-
-          {/* Mobile Navigation */}
-          <div className="flex md:hidden overflow-x-auto gap-1.5 mt-3 pt-2 border-t border-zepto-border">
-            {navTabs.map(nav => (
-              <button
-                key={nav.id}
-                onClick={() => setTab(nav.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition ${
-                  tab === nav.id ? "bg-zepto-purple text-white font-bold" : "bg-[#0F0F1A] text-slate-300"
-                }`}
-              >
-                {nav.icon} {nav.label}
-              </button>
-            ))}
           </div>
         </div>
       </header>
