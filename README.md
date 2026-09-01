@@ -134,7 +134,9 @@ cd frontend && npm install && npm start
 ### 7. GitHub Pages (optional)
 ```bash
 git add .
-git commit -m "Redesign the page" && git push```
+git commit -m "Redesign the page" 
+git push
+```
 
 ---
 
